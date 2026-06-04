@@ -79,7 +79,7 @@ export default async function HomePage() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 mb-10">
           {[
-            { value: "32", label: "Perguntas" },
+            { value: "42", label: "Perguntas" },
             { value: "30s", label: "Por pergunta" },
             { value: "5", label: "Categorias" },
           ].map((s) => (
