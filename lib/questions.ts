@@ -91,6 +91,7 @@ export const questions: Question[] = [
     category: "campeao",
     difficulty: "bronze",
     question: "O Zed é bom contra qual tipo de campeão?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg",
     options: [
       "Tanques com muita armadura e HP",
       "Suportes com habilidades de cura",
@@ -104,21 +105,23 @@ export const questions: Question[] = [
     id: 7,
     category: "campeao",
     difficulty: "bronze",
-    question: "O que a ult da Renata Glasc faz nos inimigos que acerta?",
+    question: "O que o Thresh faz com sua lanterna (W)?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg",
     options: [
-      "Eles ficam em frenesi e atacam os próprios aliados por alguns segundos",
-      "Eles ficam enraizados no lugar por 2 segundos",
-      "Eles perdem toda a visão de mapa temporariamente",
-      "Eles são empurrados em direção à base inimiga",
+      "Lança uma lanterna que causa dano em área",
+      "Cria um escudo ao redor de si mesmo",
+      "Joga uma lanterna para um aliado que pode clicar nela para chegar até o Thresh",
+      "Revela inimigos invisíveis na área",
     ],
-    correct: 0,
-    explanation: "Hostile Takeover: os inimigos atingidos entram em frenesi e atacam os próprios aliados. Se pegar o carry inimigo, ele literalmente mata o próprio time!",
+    correct: 2,
+    explanation: "Dark Passage: o Thresh joga a lanterna para um aliado. Se o aliado clicar nela, é puxado até o Thresh. Serve para salvar aliados em perigo ou reposicionar rápido!",
   },
   {
     id: 8,
     category: "campeao",
     difficulty: "bronze",
     question: "Qual é a função dos cogumelos invisíveis do Teemo?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg",
     options: [
       "Curar aliados que passam por cima deles",
       "Bloquear o caminho de inimigos na jungle",
@@ -135,6 +138,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Você acabou de matar o Dragon. O que fazer LOGO EM SEGUIDA?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg",
     options: [
       "Voltar para a base para comprar itens",
       "Empurrar a lane mais próxima ou forçar outro objetivo",
@@ -149,6 +153,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "O que é 'push' de wave?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg",
     options: [
       "Empurrar os minions em direção à torre inimiga",
       "Recuar para a torre aliada com os minions",
@@ -163,6 +168,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Qual objetivo dá o buff mais poderoso do late game?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg",
     options: [
       "Dragão Ancião",
       "Rift Herald",
@@ -177,6 +183,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Dois inimigos desapareceram do mapa (MIA). Você está sozinho na bot lane. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg",
     options: [
       "Continuar farmando — provavelmente foram pra base",
       "Recuar para a torre e pingar missing para o time",
@@ -191,6 +198,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Quando é o momento certo para dar recall (B)?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg",
     options: [
       "Somente quando a wave estiver perdida para o inimigo",
       "Apenas após matar o inimigo da sua lane",
@@ -205,6 +213,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "O que é 'roaming' e quem costuma fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
     options: [
       "Defender a jungle aliada — geralmente o jungler",
       "Farmar toda a wave rapidamente — geralmente o ADC",
@@ -219,6 +228,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Você tem 1500 de ouro e o item principal custa 3200. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg",
     options: [
       "Comprar um componente agora e voltar mais tarde com o resto",
       "Ficar na lane farmando até juntar o valor total",
@@ -235,6 +245,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "O que é 'CS' ou 'last hit'?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg",
     options: [
       "Matar um campeão inimigo com o último golpe para roubar a kill",
       "Dar o golpe final em um minion para receber o ouro dele",
@@ -249,6 +260,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Para que serve o Flash?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg",
     options: [
       "Aumentar a velocidade de movimento por 2 segundos",
       "Causar dano em área ao redor do personagem",
@@ -263,6 +275,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "O que acontece se você ficar parado no alcance de uma torre inimiga?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg",
     options: [
       "Nada — a torre só ataca se você atacar alguém primeiro",
       "A torre ataca você automaticamente após um aviso visual",
@@ -277,6 +290,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "O que é 'kiting'?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg",
     options: [
       "Atacar e se mover alternadamente para causar dano mantendo distância",
       "Ficar parado e soltar toda a combo de habilidades de uma vez",
@@ -291,6 +305,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Qual é a função principal do Ignite?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg",
     options: [
       "Curar o aliado mais próximo de você",
       "Revelar inimigos invisíveis na área",
@@ -305,6 +320,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "O que é 'poke'?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg",
     options: [
       "Engajar em cima do inimigo com habilidades de curto alcance",
       "Usar a jungle para emboscar inimigos pela lateral",
@@ -319,6 +335,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você está com 20% de HP na lane. Qual a atitude certa?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg",
     options: [
       "Continuar atacando pois está com vantagem de CS",
       "Recuar para a torre ou dar recall para não morrer de graça",
@@ -335,6 +352,7 @@ export const questions: Question[] = [
     category: "itens",
     difficulty: "bronze",
     question: "Qual é a função do Thornmail?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg",
     options: [
       "Aumentar seu dano mágico em porcentagem",
       "Dar velocidade de movimento extra ao correr",
@@ -349,6 +367,7 @@ export const questions: Question[] = [
     category: "itens",
     difficulty: "bronze",
     question: "Quando você deve comprar itens com Grievous Wounds?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg",
     options: [
       "Sempre como primeiro item em qualquer partida",
       "Quando o time inimigo tem muita cura (Soraka, Mundo, Aatrox...)",
@@ -363,6 +382,7 @@ export const questions: Question[] = [
     category: "itens",
     difficulty: "bronze",
     question: "O que o Rabadon's Deathcap faz?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg",
     options: [
       "Reduz o cooldown de todas as habilidades em 20%",
       "Aumenta a cura e o escudo de habilidades em 35%",
@@ -379,6 +399,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "O que é um 'gank' do jungler?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg",
     options: [
       "O jungler farmar os camps da jungle inimiga",
       "O jungler voltar para base para recuperar HP",
@@ -393,6 +414,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "Qual é a diferença entre Dragon e Baron Nashor?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg",
     options: [
       "Dragon dá buffs elementais acumuláveis (bot side); Baron fortalece minions (top side)",
       "Não há diferença — os dois dão o mesmo tipo de buff para o time",
@@ -407,6 +429,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "O que acontece quando você destrói o Nexus inimigo?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg",
     options: [
       "O jogo termina com vitória para o seu time imediatamente",
       "Você ganha 1000 de ouro extra para todos os aliados",
@@ -421,6 +444,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "O que é 'freeze' de wave?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg",
     options: [
       "Usar campeões de gelo para lentificar a wave inimiga",
       "Empurrar todos os minions rápido para a torre inimiga",
@@ -435,6 +459,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "O que significa 'splitpush'?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg",
     options: [
       "Dividir o time ao meio para atacar duas torres ao mesmo tempo",
       "Um jogador empurrar uma lane sozinho enquanto o time pressiona outro lado",
@@ -464,6 +489,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Seu time ganhou um teamfight 5x5. Qual é o ERRO mais clássico do Bronze?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg",
     options: [
       "Ir direto para o Baron ou torres após a luta",
       "Ficar parado comemorando até os inimigos respawnarem",
@@ -524,6 +550,7 @@ export const questions: Question[] = [
     category: "campeao",
     difficulty: "bronze",
     question: "Qual é a característica mais especial da Mel em combate?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mel_0.jpg",
     options: [
       "Ela se torna invisível quando recebe muito dano seguido",
       "Ela cura todos os aliados próximos ao usar habilidades",
@@ -538,6 +565,7 @@ export const questions: Question[] = [
     category: "campeao",
     difficulty: "bronze",
     question: "Como funciona a passiva do Braum?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg",
     options: [
       "Ele regenera HP toda vez que um aliado usa uma habilidade",
       "Aliados que acertam um inimigo marcado pelo Braum acumulam stacks — no 4º stack o inimigo leva stun",
@@ -582,6 +610,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "Em um teamfight você é o ADC. Quem você deve focar primeiro?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg",
     options: [
       "O tank inimigo pois ele está na sua frente",
       "O campeão mais próximo de você para limpar rápido",
@@ -596,6 +625,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "O que significa 'peel' no contexto de um teamfight?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg",
     options: [
       "Fugir da luta quando estiver com pouco HP",
       "Proteger o seu carry usando CC e habilidades de suporte nos inimigos que o ameaçam",
@@ -610,6 +640,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "Qual é a ordem de prioridade correta de objetivos no mid game?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg",
     options: [
       "Baron → Dragon → Torres → Kills",
       "Torres → Dragon → Baron → Kills",
@@ -625,6 +656,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você é o ADC no teamfight. Onde deve se posicionar?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg",
     options: [
       "Na frente com o tank para causar mais dano",
       "No meio do grupo para não ficar sozinho",
@@ -639,6 +671,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você é o suporte no teamfight. Qual é sua prioridade?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg",
     options: [
       "Usar todo o dano possível no carry inimigo",
       "Proteger seu ADC e usar CC nos inimigos que ameaçam ele",
@@ -653,6 +686,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você é o tank/engager (ex: Malphite). Quando iniciar o teamfight?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg",
     options: [
       "Quando o inimigo avançar primeiro em você",
       "Somente após o ADC aliado dar o primeiro ataque",
@@ -667,6 +701,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Você é o mid laner e matou seu inimigo. O que fazer agora?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
     options: [
       "Ficar na mid farmando até o inimigo respawnar",
       "Rotar para bot ou top para criar pressão enquanto tem vantagem de número",
@@ -681,6 +716,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Você é o top laner e percebe que o inimigo da mid sumiu do mapa. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg",
     options: [
       "Continuar farmando — não é problema do top",
       "Recuar para perto da torre e avisar o time com ping de perigo",
@@ -695,6 +731,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Você é o jungler e vê que seu aliado da bot está levando gank. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg",
     options: [
       "Continuar farmando a jungle — não consegue chegar a tempo",
       "Pingar para o aliado recuar e ignorar",
@@ -709,6 +746,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você vai entrar no pit do Baron com o time. O que fazer ANTES de entrar?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg",
     options: [
       "Entrar direto — quanto mais rápido matar o Baron, melhor",
       "Esperar o Baron ficar com 50% de HP para entrar",
@@ -723,6 +761,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você está numa luta 1v1 na lane e o inimigo está com muito mais HP. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg",
     options: [
       "All-in total — surpreender o inimigo pode funcionar",
       "Recuar, jogar seguro e esperar o jungler ou uma situação mais favorável",
@@ -737,6 +776,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "Seu time está vencendo mas o inimigo tem um Tryndamere no splitpush. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg",
     options: [
       "Ignorar e focar no Dragon com o time todo",
       "Mandar um jogador defender enquanto o resto toma objetivos no outro lado",
@@ -751,6 +791,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Como carry (ADC ou mago), quando você NUNCA deve engajar primeiro?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg",
     options: [
       "Quando o inimigo está com mais de 50% de HP",
       "Quando o jungler não está visível no mapa",
@@ -765,6 +806,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "Você é ADC e o assassino inimigo pulou em você. Qual a primeira coisa a fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg",
     options: [
       "Usar o Flash para se afastar e criar distância",
       "Atacar ele para causar dano antes de morrer",
@@ -779,6 +821,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "Falta 30 segundos para o Dragon nascer. Onde seu time deve estar?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg",
     options: [
       "Cada um farmando sua lane para chegar com mais ouro",
       "Juntando perto do Dragon com visão das entradas para contestar ou pegar seguro",
@@ -793,6 +836,7 @@ export const questions: Question[] = [
     category: "macro",
     difficulty: "bronze",
     question: "Você está 0/5 na partida. Qual a melhor estratégia para ajudar o time?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg",
     options: [
       "Tentar fazer kills agressivas para recuperar o ouro perdido",
       "Jogar seguro, farmar, não arriscar mortes e seguir o time nas decisões",
@@ -807,6 +851,7 @@ export const questions: Question[] = [
     category: "micro",
     difficulty: "bronze",
     question: "O que significa 'body block' ou 'interpor o corpo'?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg",
     options: [
       "Usar habilidades de empurrão para afastar inimigos",
       "Ficar na frente do seu carry para absorver skillshots ou dano no lugar dele",
@@ -821,6 +866,7 @@ export const questions: Question[] = [
     category: "objetivo",
     difficulty: "bronze",
     question: "Você ganhou um teamfight 5x0. Os inimigos têm 40 segundos de respawn. O que fazer?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg",
     options: [
       "Ir todos para a base para comprar itens com calma",
       "Esperar os inimigos respawnarem para dar outro teamfight",
