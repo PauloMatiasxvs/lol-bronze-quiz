@@ -833,7 +833,7 @@ export const questions: Question[] = [
 ];
 
 // IDs fixos que todo mundo responde — sempre as mesmas 15 perguntas na mesma ordem
-const FIXED_IDS = [3, 7, 9, 16, 17, 22, 26, 28, 33, 35, 37, 43, 45, 49, 52];
+const FIXED_IDS = [3, 39, 9, 16, 17, 22, 26, 28, 33, 35, 37, 43, 45, 49, 52];
 
 export function getFixedQuestions(): Question[] {
   return FIXED_IDS.map((id) => questions.find((q) => q.id === id)!);
