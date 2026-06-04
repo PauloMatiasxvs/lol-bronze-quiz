@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --gold: #c89b3c;
+  --dark-bg: #0a0e1a;
+  --card-bg: #111827;
+  --border: #1e3a5f;
+  --background: #0a0e1a;
+  --foreground: #e2e8f0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--dark-bg);
+  color: #e2e8f0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #c89b3c, #a67c2c);
+  color: #0a0e1a;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #d4af50, #b8892e);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(200, 155, 60, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #c89b3c;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  border: 1px solid #c89b3c;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(200, 155, 60, 0.1);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.input-field {
+  background: #1a2332;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: #e2e8f0;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  border-color: #c89b3c;
+  box-shadow: 0 0 0 2px rgba(200, 155, 60, 0.2);
+}
+
+.badge-bronze {
+  background: linear-gradient(135deg, #8b4513, #a0522d);
+  color: #ffd700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 155, 60, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(200, 155, 60, 0); }
+}
+
+.timer-warning {
+  animation: pulse-gold 1s infinite;
 }
