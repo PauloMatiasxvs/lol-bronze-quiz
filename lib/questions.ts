@@ -876,10 +876,25 @@ export const questions: Question[] = [
     correct: 2,
     explanation: "40 segundos de respawn é uma janela enorme — tome Baron, destrua torres, avance com minions e pressione o Nexus. Teamwipes existem para fechar o jogo, não para descansar.",
   },
+  {
+    id: 58,
+    category: "objetivo",
+    difficulty: "bronze",
+    question: "Qual é a função principal de um tank no teamfight?",
+    image: "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg",
+    options: [
+      "Causar o máximo de dano possível nos carries inimigos",
+      "Ficar atrás do time e curar os aliados com habilidades",
+      "Engajar, absorver dano, usar CC e proteger os carries aliados",
+      "Matar o suporte inimigo primeiro para deixar o ADC sozinho",
+    ],
+    correct: 2,
+    explanation: "Tank entra primeiro, aguenta a porrada, usa CC nos inimigos e cria espaço para os carries causarem dano em segurança. Você não precisa de kills — precisa estar vivo no meio do inimigo.",
+  },
 ];
 
 // IDs fixos que todo mundo responde — sempre as mesmas 15 perguntas na mesma ordem
-const FIXED_IDS = [3, 39, 9, 16, 17, 22, 26, 28, 33, 35, 37, 43, 45, 49, 52];
+const FIXED_IDS = [3, 39, 9, 16, 17, 22, 26, 28, 33, 35, 37, 43, 45, 58, 52];
 
 export function getFixedQuestions(): Question[] {
   return FIXED_IDS.map((id) => questions.find((q) => q.id === id)!);
