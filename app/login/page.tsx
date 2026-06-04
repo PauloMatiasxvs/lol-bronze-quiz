@@ -30,22 +30,45 @@ export default function LoginPage() {
         setLoading(false);
         return;
       }
-      const { error: signUpError } = await supabase.auth.signUp({
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
         options: { data: { username: username.trim() } },
       });
+
       if (signUpError) {
-        setError(
-          signUpError.message === "User already registered"
-            ? "Este email já está cadastrado."
-            : signUpError.message
-        );
-      } else {
-        setSuccess(
-          "Conta criada! Verifique seu email para confirmar, depois faça login."
-        );
+        if (
+          signUpError.message === "User already registered" ||
+          signUpError.message.includes("already registered")
+        ) {
+          setError("Este email já está cadastrado. Faça login.");
+        } else if (signUpError.message.includes("rate limit")) {
+          setError(
+            "Muitos cadastros seguidos. Aguarde alguns minutos e tente novamente, ou peça ao administrador para desativar a confirmação de email no Supabase."
+          );
+        } else {
+          setError(signUpError.message);
+        }
+        setLoading(false);
+        return;
       }
+
+      // Se confirmação de email está desativada, o usuário já está autenticado
+      if (signUpData.session) {
+        router.push("/");
+        router.refresh();
+        return;
+      }
+
+      // Se confirmação está ativada, tenta logar direto mesmo assim
+      const { error: signInAfterRegister } = await supabase.auth.signInWithPassword({ email, password });
+      if (!signInAfterRegister) {
+        router.push("/");
+        router.refresh();
+        return;
+      }
+
+      setSuccess("Conta criada! Faça login agora.");
     } else {
       const { error: signInError } = await supabase.auth.signInWithPassword({
         email,
