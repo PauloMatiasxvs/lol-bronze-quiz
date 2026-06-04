@@ -4,48 +4,43 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
+function usernameToEmail(username: string) {
+  return `${username.toLowerCase().replace(/[^a-z0-9]/g, "")}@lolbronzequiz.gg`;
+}
+
 export default function LoginPage() {
   const router = useRouter();
   const [isRegister, setIsRegister] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
-    setSuccess("");
     setLoading(true);
 
-    // Import lazily so it doesn't run during SSR prerender
     const { createClient } = await import("@/lib/supabase/client");
     const supabase = createClient();
+    const fakeEmail = usernameToEmail(username);
 
     if (isRegister) {
       if (username.trim().length < 3) {
-        setError("Nome de Invocador precisa ter pelo menos 3 caracteres.");
+        setError("Nome precisa ter pelo menos 3 caracteres.");
         setLoading(false);
         return;
       }
-      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
-        email,
+
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: fakeEmail,
         password,
         options: { data: { username: username.trim() } },
       });
 
       if (signUpError) {
-        if (
-          signUpError.message === "User already registered" ||
-          signUpError.message.includes("already registered")
-        ) {
-          setError("Este email já está cadastrado. Faça login.");
-        } else if (signUpError.message.includes("rate limit")) {
-          setError(
-            "Muitos cadastros seguidos. Aguarde alguns minutos e tente novamente, ou peça ao administrador para desativar a confirmação de email no Supabase."
-          );
+        if (signUpError.message.includes("already registered") || signUpError.message.includes("already been registered")) {
+          setError("Este nome de invocador já está em uso.");
         } else {
           setError(signUpError.message);
         }
@@ -53,34 +48,36 @@ export default function LoginPage() {
         return;
       }
 
-      // Se confirmação de email está desativada, o usuário já está autenticado
-      if (signUpData.session) {
+      if (data.session) {
         router.push("/");
         router.refresh();
         return;
       }
 
-      // Se confirmação está ativada, tenta logar direto mesmo assim
-      const { error: signInAfterRegister } = await supabase.auth.signInWithPassword({ email, password });
-      if (!signInAfterRegister) {
+      // Tenta logar direto após cadastro
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: fakeEmail,
+        password,
+      });
+      if (!signInError) {
         router.push("/");
         router.refresh();
         return;
       }
-
-      setSuccess("Conta criada! Faça login agora.");
+      setError("Conta criada! Agora faça login.");
     } else {
       const { error: signInError } = await supabase.auth.signInWithPassword({
-        email,
+        email: fakeEmail,
         password,
       });
       if (signInError) {
-        setError("Email ou senha incorretos.");
+        setError("Nome de invocador ou senha incorretos.");
       } else {
         router.push("/");
         router.refresh();
       }
     }
+
     setLoading(false);
   }
 
@@ -114,16 +111,12 @@ export default function LoginPage() {
                   }`}
                   style={
                     active
-                      ? {
-                          background:
-                            "linear-gradient(135deg, #c89b3c, #a67c2c)",
-                        }
+                      ? { background: "linear-gradient(135deg, #c89b3c, #a67c2c)" }
                       : { background: "transparent" }
                   }
                   onClick={() => {
                     setIsRegister(tab === "register");
                     setError("");
-                    setSuccess("");
                   }}
                 >
                   {tab === "login" ? "Entrar" : "Criar Conta"}
@@ -133,33 +126,18 @@ export default function LoginPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            {isRegister && (
-              <div>
-                <label className="block text-sm text-slate-400 mb-1">
-                  Nome de Invocador
-                </label>
-                <input
-                  className="input-field"
-                  type="text"
-                  placeholder="Ex: BronzeKing420"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  required
-                />
-              </div>
-            )}
-
             <div>
               <label className="block text-sm text-slate-400 mb-1">
-                Email
+                Nome de Invocador
               </label>
               <input
                 className="input-field"
-                type="email"
-                placeholder="seu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                placeholder="Ex: BronzeKing420"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
+                autoComplete="username"
               />
             </div>
 
@@ -175,17 +153,13 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={6}
+                autoComplete={isRegister ? "new-password" : "current-password"}
               />
             </div>
 
             {error && (
               <div className="bg-red-900/30 border border-red-700 text-red-300 rounded-lg p-3 text-sm">
                 {error}
-              </div>
-            )}
-            {success && (
-              <div className="bg-green-900/30 border border-green-700 text-green-300 rounded-lg p-3 text-sm">
-                {success}
               </div>
             )}
 
@@ -203,8 +177,8 @@ export default function LoginPage() {
           </form>
         </div>
 
-        <p className="text-center text-slate-500 text-sm mt-4">
-          <Link href="/" className="text-slate-400 hover:text-slate-200">
+        <p className="text-center mt-4">
+          <Link href="/" className="text-slate-400 text-sm hover:text-slate-200">
             ← Voltar para a home
           </Link>
         </p>
