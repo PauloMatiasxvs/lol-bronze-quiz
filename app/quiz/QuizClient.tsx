@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { getRandomQuestions, type Question, categoryLabels } from "@/lib/questions";
+import { getFixedQuestions, type Question, categoryLabels } from "@/lib/questions";
 import Link from "next/link";
 import Image from "next/image";
 
 const TIME_PER_QUESTION = 30;
-const QUESTIONS_COUNT = 10;
+const QUESTIONS_COUNT = 15;
 
 type QuizState = "idle" | "playing" | "finished";
 
@@ -84,7 +84,7 @@ export default function QuizClient({
   }, [state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function startQuiz() {
-    const qs = getRandomQuestions(QUESTIONS_COUNT);
+    const qs = getFixedQuestions();
     setQuestions(qs);
     setAnswers(new Array(QUESTIONS_COUNT).fill(undefined));
     setCurrent(0);
